@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<!-- Copyright (c) 2014-2015 Foxconn Incorporated.  All rights reserved. -->
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>WiFi Mode Selection</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="h.ico"/>
+    <!--#p0vars--><!--#p0tvars--><!--#p0ipvar-->
+    <script src="javascript.js" language="JavaScript1.2" charset="utf-8"></script>
+  </head>
+
+  <body onLoad="SetFormDefaults()">
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td align="left" valign="top" width="75%">
+            <center>
+              <h2 align="center">WiFi Mode Selection</h2>
+            </center>
+            <hr size="2" width="100%">
+            <table>
+              <tbody>
+                <tr>
+                  <td class="gr">Module Name:</td>
+                  <td><b><!--#modname--></b></td>
+                </tr>
+                <tr>
+                  <td class="gr" width="25%">WLAN IP Address:</td>
+                  <td><!--#ipaddr--></td>
+                </tr>
+                <tr>
+                  <td class="gr">WLAN MAC Address:</td>
+                  <td><!--#macaddr--></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3>WiFi Mode Settings:</h3>
+            <p>The current settings for WLAN may be changed using the
+            form below. To make the new settings apply each time the ADE-7491 module is
+            reset, ensure that "Make these the default settings" is checked before
+            pressing the "Apply Changes" button. If this control is not checked,
+            the changes are applied to the port but the existing
+            defaults are used whenever the module is next reset.
+            <p>
+
+            <form name="config" action="config.cgi" method="get">
+              <input name="port" value="0" type="hidden">
+              <table width="100%" border="0" cellpadding="2" cellspacing="2">
+                <tbody>
+				  <tr>
+                    <td class="gr">WiFi Mode: </td>
+                    <td><!--#p0wm--></td>
+                    <td>
+                      <select size="1" name="wlanmode">
+                        <option value="1">AP Mode</option>
+                        <option value="2">STA Mode</option>
+                      </select>
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">Data Transfor Mode: </td>
+                    <td><!--#p0dtm--></td>
+                    <td>
+                      <select size="1" name="dtm">
+                        <option value="1">Transparent</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td align="center">
+                      <input name="Submit" value="Submit" type="submit">
+                    </td>
+                    <td style="text-align: center;">
+                      <div>&nbsp;<input name="default" value="1" type="checkbox"> Make these the default settings.<br></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

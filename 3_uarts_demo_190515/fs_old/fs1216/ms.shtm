@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<!-- Copyright (c) 2014-2015 Foxconn Incorporated.  All rights reserved. -->
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>WiFi Mode Selection</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+   <!--#wifimdjs-->
+    <script src="javascript_wm.js" language="JavaScript1.2" charset="utf-8"></script>
+	<script >
+    	function logout()
+		{
+			window.top.location.href="login.shtm";
+			//document.login.submit();
+		}
+    </script>
+  </head>
+
+  <body onLoad="SetFormDefaults_wm()">
+    <table width="100%">
+      <tbody>
+	  <tr>
+        	<td>
+            	<div align="right">
+            		<a href="javascript:logout();">
+                    	Logout	
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            	</div>
+             </td>
+        </tr>
+        <tr>
+          <td align="left" valign="top" width="75%">
+            <center>
+              <h2 align="center">WiFi Mode Selection</h2>
+            </center>
+            <hr size="2" width="100%">
+            <h3>WiFi Mode Settings:</h3>
+            <p>The current settings for WLAN may be changed using the
+            form below. To make the new settings apply each time the ADE-7491 module is
+            reset, ensure that "Make these the default settings" is checked before
+            pressing the "Next" button. If this control is not checked,
+            the changes are applied to the port but the existing
+            defaults are used whenever the module is next reset.
+            <p>
+
+            <form name="wifimode" action="wifimode.cgi" method="get">
+             
+              <table width="100%" border="0" cellpadding="2" cellspacing="2">
+                <tbody>
+				  <tr>
+                    <td class="gr">WiFi Mode: </td>
+                    <td><!--#wifimd--></td>
+                    <td>
+                      <select size="1" name="wifimd">
+                        <option value="1">AP Mode</option>
+                        <option value="2">STA Mode</option>
+                      </select>                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td align="center">
+                      <input name="Submit" value="Next" type="submit">                    </td>
+                    <td style="text-align: center;">
+                      <div>&nbsp;<input name="default" value="1" type="checkbox"> Make these the default settings.<br></div>                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

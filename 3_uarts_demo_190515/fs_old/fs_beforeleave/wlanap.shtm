@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!-- Copyright (c) 2014-2015 Foxconn Incorporated.  All rights reserved. -->
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>WLAN AP Settings</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="h.ico"/>
+    <!--#p0vars--><!--#p0tvars--><!--#p0ipvar-->
+    <script src="javascript.js" language="JavaScript1.2" charset="utf-8"></script>
+  </head>
+
+  <body onLoad="SetFormDefaults()">
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td align="left" valign="top" width="75%">
+            <center>
+              <h2 align="center">WiFi AP Settings</h2>
+            </center>
+            <hr size="2" width="100%">
+            <table>
+              <tbody>
+                <tr>
+                  <td class="gr">Module Name:</td>
+                  <td><b><!--#modname--></b></td>
+                </tr>
+                <tr>
+                  <td class="gr" width="25%">WLAN IP Address:</td>
+                  <td><!--#ipaddr--></td>
+                </tr>
+                <tr>
+                  <td class="gr">WLAN MAC Address:</td>
+                  <td><!--#macaddr--></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3>WiFi AP Interface Settings:</h3>
+            <p>The current settings for WLAN may be changed using the
+            form below. To make the new settings apply each time the S2E module is
+            reset, ensure that "Make these the default settings" is checked before
+            pressing the "Apply Changes" button. If this control is not checked,
+            the changes are applied to the port but the existing
+            defaults are used whenever the module is next reset.
+            <p>
+
+            <form name="config" action="config.cgi" method="get">
+              <input name="port" value="0" type="hidden">
+              <table width="100%" border="0" cellpadding="2" cellspacing="2">
+                <tbody>
+				  <tr>
+                    <td class="gr">Network Mode: </td>
+                    <td><!--#p0nm--></td>
+                    <td>
+                      <select size="1" name="nwmode">
+                        <option value="1">11b/g mixed mode</option>
+                        <option value="2">11b only</option>
+						<option value="3">11g only</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Network Name(SSID): </td>
+                    <td><!--#p0na--></td>
+                    <td><br>
+                      <label>
+                      <input type="text" name="nassid">
+                    </label></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">MAC Address: </td>
+                    <td><!--#p0bss--></td>
+					<td>
+					<input type="text" name="bssid">
+					</td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Frequency(Channel): </td>
+                    <td><!--#p0fr--></td>
+                    <td>
+                      <select size="1" name="fre">
+                        <option value="1">AutoSelect</option>
+                        <option value="2">2.412GHz(channel 1)</option>
+						<option value="3">2.417GHz(channel 2)</option>
+						<option value="4">2.422GHz(channel 3)</option>
+						<option value="5">2.427GHz(channel 4)</option>
+						<option value="6">2.432GHz(channel 5)</option>
+						<option value="7">2.437GHz(channel 6)</option>
+						<option value="8">2.442GHz(channel 7)</option>
+						<option value="9">2.447GHz(channel 8)</option>
+						<option value="10">2.452GHz(channel 9)</option>
+						<option value="11">2.457GHz(channel 10)</option>
+						<option value="12">2.462GHz(channel 11)</option>
+                      </select> 
+                    </td>
+                  </tr>
+				   <tr>
+                    <td class="gr">Security Mode: </td>
+                    <td><!--#p0sm--></td>
+                    <td>
+                      <select name="SM">
+                        <option value="1">Disable</option>
+						<option value="2">WEP-128</option>
+						<option value="3">WPA-PSK</option>
+						<option value="4">WPA2-PSK</option>
+                      </select>
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">IP Address(Default DHCP Gateway): </td>
+                    <td><!--#p0ip--></td>
+                    <td>
+                      <input maxlength="3" size="3" name="sip1">.
+                      <input maxlength="3" size="3" name="sip2">.
+                      <input maxlength="3" size="3" name="sip3">.
+                      <input maxlength="3" size="3" name="sip4">
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">Subnet Mask:&nbsp; </td>
+					<td><!--#p0sub--></td>
+                    <td>
+                      <input maxlength="3" size="3" name="mip1">.
+                      <input maxlength="3" size="3" name="mip2">.
+                      <input maxlength="3" size="3" name="mip3">.
+                      <input maxlength="3" size="3" name="mip4">
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">DHCP Type: </td>
+                    <td><!--#p0dt--></td>
+                    <td>
+                      <select size="1" name="dhcp">
+                        <option value="1">Server</option>
+                        <option value="2">Disable</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td align="center">
+                      <input name="Submit" value="Submit" type="submit">
+                    </td>
+                    <td style="text-align: center;">
+                      <div>&nbsp;<input name="default" value="1" type="checkbox"> Make these the default settings.<br></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

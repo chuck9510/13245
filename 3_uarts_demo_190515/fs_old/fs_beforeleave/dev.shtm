@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<!-- Copyright (c) 2014-2015 Foxconn Incorporated.  All rights reserved. -->
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>Device Management</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    
+    <script src="javascript.js" language="JavaScript1.2" charset="utf-8"></script>
+  </head>
+  <body onLoad="SetFormDefaults();">
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td align="left" valign="top" width="75%">
+            <center>
+              <h2 align="center">Device Management</h2>
+            </center>
+            <hr size="2" width="100%">
+            
+
+            <h3>User Settings</h3>
+            <form action="pw.cgi" method="get" name="pw">
+              <table border="1" cellpadding="2" cellspacing="2" width="100%">
+                <tbody>
+                  <tr>
+                    <td class="gr">Account</td>
+                     <td>
+                      <input name="account" type="text" maxlength="5">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Password</td>
+                    <td>
+                      <input name="pw" type="text" maxlength="5">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Confirm Password </td>
+                    <td>
+                      <input name="cpw" type="text" maxlength="5">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" rowspan="1" align="center">
+                      <input value="Change" type="button">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+
+            <h3>Restart Module</h3>
+            <form action="restart.cgi" method="get">
+              <table border="1" cellpadding="2" cellspacing="2" width="100%">
+                <tbody>
+				  <tr>
+                    <td class="gr">Restart the ADE-7491 Module:</td>
+                    <td colspan="2" rowspan="1" align="center">
+                      <input name="mysubmit" value="Restart" onClick="" type="submit">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+
+            <h3>Restore Factory Defaults</h3>
+            <form method="get" action="defaults.cgi" name="defaultform">
+              <table border="1" cellpadding="2" cellspacing="2" width="100%">
+                <tbody>
+                  <tr>
+                    <td class="gr">Restore all options to their factory default states:</td>
+                    <td colspan="2" rowspan="1" align="center">
+                      <input name="mysubmit" value="Restore Defaults" onClick="return CheckDefaults(document.defaultform);" type="submit">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

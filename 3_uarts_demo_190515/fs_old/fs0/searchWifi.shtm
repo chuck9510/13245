@@ -1,0 +1,127 @@
+<!-- Copyright 2004, Ralink Technology Corporation All Rights Reserved. -->
+<html>
+<head>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<META http-equiv="Content-Type" content="text/html" charset="gb2312">
+
+
+<link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="h.ico"/>
+<title>M2M Web Server</title>
+ <script type="text/javascript" src="searchWifi.js"></script>
+ <script src="javascript_validate.js" language="JavaScript1.2" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+var gg_ssid="";
+var gg_rssi;
+var gg_security;
+var isDelay=0;
+
+function apply_clicked()
+{ 	
+	document.forms[0].action="searchWifi.cgi?ssid="+gg_ssid;
+	
+	document.forms[0].submit();
+}
+	
+function buttonDelay()
+	{
+	if(isDelay==0)
+		{
+			apply_clicked();
+			isDelay=1;
+			setTimeout("resetDelay();",5000);
+		}
+	}
+
+	function resetDelay()
+	{
+		isDelay=0;
+	} 
+</script>
+<script>
+		checkCookie();  //excecute checkCookie()
+	</script>
+</head>
+
+<body >
+
+<div id="heading">
+      <table width="100%">
+        <tr>
+          <td>
+            <a id="heading_fox" target="_" href="http://www.foxconn.com">
+              <img src="foxconn_logo.jpg" alt="Foxconn">
+            </a>
+          </td>
+          <td width="100%">
+            <div id="heading_h1">
+            ADE-7491 Series UART to Ethernet Sever Device </div>
+            <div id="heading_h2">
+            </div>
+          </td>
+          <td>
+            <a id="heading_fox" target="_" href="http://www.foxconn.com">
+              <img src="logo2.jpg" alt="logo2">
+            </a>
+          </td>
+        </tr>
+      </table>
+      <hr><hr>
+    </div>
+    
+    <div id="menu">
+      <ul>
+		<li><a href="ms.shtm" id="ms" >Wifi Module Settings</a></li>
+		<!--<li><a href="wlanap.shtm" id="wlanap" target="content">WiFi AP Settings</a></li>
+		<li><a href="wlansta.shtm" id="wlansta" target="content">WiFi STA Settings</a></li>-->
+		<li><a href="lan.shtm" id="lan" >Ethernet Settings</a></li>
+		<li><a href="wlan2ur.shtm" id="wlan2ur" >Uart and Network Settings</a></li>
+        <li><a href="s2e.shtm" id="s2e" >Uart Port Status</a></li>
+		<li><a href="dev.shtm" id="dev">Device Management</a></li>
+      </ul>
+      <img src="product.jpg" alt="product">
+    </div>
+
+<div id="content">
+<table class="body"><tr><td>
+<form  name="sta_site_survey" >
+<table id="searchWifiTable" width="540" border="1" cellpadding="2" cellspacing="1" bordercolor="#9BABBD">
+  <tr>
+    <td class="title" colspan="8" id="scanSiteSurvey">Site Survey</td>
+	
+  </tr>
+  <tr>
+    <td bgcolor="#e9e9e9" id="scanSelect">&nbsp;</td>
+    <td bgcolor="#e9e9e9" id="scanSSID">SSID</td>
+    <td bgcolor="#e9e9e9" id="RSSI">RSSI</td>
+    <td bgcolor="#e9e9e9" id="Security">Security Mode</td>
+
+  </tr>
+
+  <!--#scan-->
+
+</table>
+  <table width = "540" border = "0" cellpadding = "2" cellspacing = "1">
+    <tr>
+      <td>
+				<input type=button style="{width:100px;}" value="Apply" id="button_apply" name="button_apply"  onClick="buttonDelay()">&nbsp;
+				<!--<input type=button  style="{width:120px;}" value="Refresh" id="button_refresh" onClick="window.location.reload()">
+				<!--<input type=button  style="{width:120px;}" value="searchWifi" id="searchWif" onClick="apply_clicked()">
+				<!--<input type=button  style="{width:120px;}" value="searchWifi" id="button_searchWifi" onClick="searchWifi()">-->
+      </td>
+    </tr>
+  </table>
+
+</form>
+</td></tr>
+</table>
+</div>
+    
+    <div id="footing">
+      <hr><hr>
+      Copyright &copy; 2015 Foxconn Incorporated.  All rights reserved.
+    </div>
+
+</body>
+</html>

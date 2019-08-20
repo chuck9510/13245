@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<!-- Copyright (c) 2014-2015 Foxconn Incorporated.  All rights reserved. -->
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>IP Change Response</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    <script src="javascript.js" language="JavaScript1.2" charset="utf-8"></script>
+  </head>
+  <body>
+  <div>
+      <table border="0" cellpadding="2" cellspacing="2" width="100%">
+        <tbody>
+          <tr>
+            
+            <td width="80%"><h2 align="center">IP Address is changing...</h2>
+              <p align="center">&nbsp;</p></td>
+          </tr>
+          <tr>
+            
+            <td width="20%">
+              <table border="0" cellpadding="4" cellspacing="2" width="100%">
+                <tbody>
+                  <tr>
+                    <td width="29%" class="gr">Module Name:</td>
+                    <td width="71%" align="left" valign="top"><!--#modname--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">MAC:</td>
+                    <td><!--#macaddr--></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>The IP Address of this module is about to change! Please access these configuration pages with the
+                newly assigned IP address
+            after a few seconds.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</body>
+</html>

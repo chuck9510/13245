@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<!-- Copyright (c) 2014-2015 Foxconn Incorporated.  All rights reserved. -->
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>ADE-7491 Series UART to Ethernet Sever Device</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+	<!--<script src="login.js" language="JavaScript1.2" charset="utf-8"></script>-->	
+	<!--#Login-->	
+	<script type="text/javascript" language="JavaScript"><!--
+      function Login()
+{
+						
+	if(counter != 0)
+	{
+			if(permit == 1)
+			{
+												
+				//window.location.href="index.htm";				
+				return true;					
+			}
+			else
+			{	
+				alert("User name or Password is incorrect! Please enter again.");
+				return false;
+			}
+	}
+}	
+	
+function _Login()
+{
+	document.login.action="login.cgi";	
+	document.login.submit();					
+}
+
+function focusUserName()
+{
+	document.getElementsByName('userName')[0].focus();	
+	return true;				
+}
+
+function loginEnter()
+ {
+     if ( event.keyCode == 13 )
+     {
+         _Login();
+         return true;
+     }
+ }
+      //-->
+    </script>	
+	
+    <style type="text/css">
+<!--
+.STYLE4 {font-size: x-large}
+-->
+    </style>
+</head>
+  <body onLoad="focusUserName();Login()">
+  <!--<form action="login.cgi" method="get">-->
+    <div id="heading">
+      <table width="100%">
+        <tr>
+          <td>
+            <a id="heading_fox" target="_" href="http://www.foxconn.com">
+              <img src="foxconn_logo.jpg" alt="Foxconn">
+            </a>
+          </td>
+          <td width="100%">
+            <div id="heading_h1">
+            ADE-7491 Series UART to Ethernet Sever Device </div>
+            <div id="heading_h2">
+            </div>
+          </td>
+          <td>
+            <a id="heading_fox" target="_" href="http://www.foxconn.com">
+              <img src="logo2.jpg" alt="logo2">
+            </a>
+          </td>
+        </tr>
+      </table>
+      <hr><hr>
+    </div>
+    <div id="menu">
+      <img src="product.jpg" alt="product">
+    </div>
+  <div id="loginDiv">
+  <form name="login"  method="get">
+ 
+       <!-- <input name="logoff" type="hidden">-->
+       
+  
+    <table width="78%" height="20%" border="0" align="right">
+      <tr>
+        <td width="275" height="53">&nbsp;</td>
+        <td width="257"><span class="STYLE4">User Login </span></td>
+        <td width="250">&nbsp;</td>
+      </tr>
+	  
+      <tr>
+        <td height="30" ><div align="right">User Name: </div></td>
+        <td><input name="userName" type="text" maxlength="5"></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="30"><div align="right">Password:</div></td>
+        <td><input name="password" type="text" maxlength="5"onKeyUp="loginEnter();"></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="26">&nbsp;</td>
+        <td><input type="button" name="login" id="login" value="login" onClick="_Login()"/></td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+	</form>
+  <div id="footing">
+      <hr><hr>
+      Copyright &copy; 2015 Foxconn Incorporated.  All rights reserved.
+    </div>
+  <!--</form>-->
+  </body>
+</html>

@@ -1,0 +1,241 @@
+﻿<!DOCTYPE HTML>
+<!-- Copyright (c) 2014-2015 Foxconn Incorporated.  All rights reserved. -->
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>WLAN AP Settings</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+   <!--#apset--><!--#apip--><!--#apms--><!--#gtipjs-->
+    <script src="javascript_ap.js" language="JavaScript1.2" charset="utf-8"></script>
+	<script src="javascript_validate.js" language="JavaScript1.2" charset="utf-8"></script>  
+  <script type="text/javascript">
+	var isDelay=0;
+	function buttonDelay()
+	{
+	if(isDelay==0)
+		{
+			document.wifiap.action="wifiap.cgi";	
+			document.wifiap.submit();
+			isDelay=1;
+			setTimeout("resetDelay();",5000);
+		}
+	}
+
+	function resetDelay()
+	{
+		isDelay=0;
+	} 
+</script>
+<script >
+    	function logout()
+		{
+			document.cookie="username=";
+			window.top.location.href="login.shtm";
+			//document.login.submit();
+		}
+    </script>
+	<script type="text/javascript">
+function checkLength(x,y)
+{
+	var name;
+	var first;
+	var second;
+	
+	if(window.event.keyCode==9)
+	{
+		return;
+	} 
+	//alert(y.substring(0,0));
+	if (x.maxLength==y.length)
+	{
+		name = this.event.srcElement.name;
+		first = name.substring(0,name.length-1);
+		second = name.substring(name.length-1,name.length);
+		++second;
+		//alert(name.length);
+		
+		//是否到了最后一个文本框
+		if (second<5)
+		{
+			document.getElementsByName(first+second)[0].value="";
+			document.getElementsByName(first+second)[0].focus();
+			//document.getElementById(id).elements[next].focus();
+		}
+	}
+}
+</script>
+<script>
+		checkCookie();  //excecute checkCookie()
+	</script>
+  </head>
+
+  <body onLoad="SetFormDefaults_ap()">
+  
+  <div id="heading">
+      <table width="100%">
+        <tr>
+          <td width="100%">
+            <div id="heading_h1">
+            IZS-74C1-1A Series UART to Ethernet Sever Device </div>
+            <div id="heading_h2">            </div>          </td>
+        </tr>
+      </table>
+	  <div align="right">
+            		Firmware Version:<!--#revision-->
+   	</div>
+      <hr><hr>
+  </div>
+    
+  <div id="menu">
+      <ul>
+		<li><a href="ms.shtm" id="ms" >Wifi Module Settings</a></li>
+		<!--<li><a href="wlanap.shtm" id="wlanap" target="content">WiFi AP Settings</a></li>
+		<li><a href="wlansta.shtm" id="wlansta" target="content">WiFi STA Settings</a></li>-->
+		<li><a href="lan.shtm" id="lan" >Ethernet Settings</a></li>
+		<li><a href="wlan2ur.shtm" id="wlan2ur" >Uart and Network Settings</a></li>
+        <li><a href="s2e.shtm" id="s2e" >Uart Port Status</a></li>
+		<li><a href="dev.shtm" id="dev">Device Management</a></li>
+      </ul>
+    </div>
+  
+  <div id="content">
+    <table width="100%">
+      <tbody>
+	  <tr>
+        	<td>
+            	<div align="right">
+            		<a href="javascript:logout();">
+                    	Logout	
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            	</div>
+             </td>
+        </tr>
+        <tr>
+          <td align="left" valign="top" width="75%">
+            <center>
+              <h2 align="center">WiFi AP Settings</h2>
+            </center>
+            <hr size="2" width="100%">
+            <table>
+              <tbody>
+                <tr>
+                  <td class="gr">Module Name:</td>
+                  <td><b><!--#modname--></b></td>
+                </tr>
+                <tr>
+                  <td class="gr" width="25%">WLAN IP Address:</td>
+                  <td><!--#wifiip--></td>
+                </tr>
+                <tr>
+                  <td class="gr">WLAN MAC Address:</td>
+                  <td><!--#wifimac--></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3>WiFi AP Interface Settings:</h3>
+            <p>The current settings for WLAN may be changed using the
+            form below. To make the new settings apply each time the S2E module is
+            reset, ensure that "Make these the default settings" is checked before
+            pressing the "Submit" button. If this control is not checked,
+            the changes are applied to the port but the existing
+            defaults are used whenever the module is next reset.
+            <p>
+
+            <form name="wifiap">
+              <input name="port" value="0" type="hidden">
+              <table width="100%" border="0" cellpadding="2" cellspacing="2">
+                <tbody>
+                  <tr>
+                    <td class="gr">Network Name(SSID): </td>
+                    <td><!--#wifinn--></td>
+                    <td>
+                      <label>
+                      <input name="wifinn" type="text" maxlength="20">
+                    </label></td>
+                  </tr>
+				  <tr>
+                    <td class="gr">Password: </td>
+                    <td><!--#appw--></td>
+                    <td>
+                      <label>
+                      <input name="appw" type="text" maxlength="8">
+                    </label></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Frequency(Channel): </td>
+                    <td><!--#wififre--></td>
+                    <td>
+                      <select size="1" name="wififre">
+                        <option value="1">AutoSelect</option>
+                        <option value="2">2.412GHz(channel 1)</option>
+						<option value="3">2.417GHz(channel 2)</option>
+						<option value="4">2.422GHz(channel 3)</option>
+						<option value="5">2.427GHz(channel 4)</option>
+						<option value="6">2.432GHz(channel 5)</option>
+						<option value="7">2.437GHz(channel 6)</option>
+						<option value="8">2.442GHz(channel 7)</option>
+						<option value="9">2.447GHz(channel 8)</option>
+						<option value="10">2.452GHz(channel 9)</option>
+						<option value="11">2.457GHz(channel 10)</option>
+						<option value="12">2.462GHz(channel 11)</option>
+                      </select>                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">IP Address: </td>
+                    <td><!--#wifiip--></td>
+                    <td><input maxlength="3" size="3" name="wip1" onKeyUp="checkLength(this,this.value)">.
+                      <input maxlength="3" size="3" name="wip2" onKeyUp="checkLength(this,this.value)">.
+                      <input maxlength="3" size="3" name="wip3" onKeyUp="checkLength(this,this.value)">.
+                    <input maxlength="3" size="3" name="wip4" onKeyUp="checkLength(this,this.value)">                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">Subnet Mask:&nbsp; </td>
+					<td><!--#wifimk--></td>
+                    <td>
+                      <input maxlength="3" size="3" name="wmip1" onKeyUp="checkLength(this,this.value)">.
+                      <input maxlength="3" size="3" name="wmip2" onKeyUp="checkLength(this,this.value)">.
+                      <input maxlength="3" size="3" name="wmip3" onKeyUp="checkLength(this,this.value)">.
+                      <input maxlength="3" size="3" name="wmip4" onKeyUp="checkLength(this,this.value)">                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr"> Gateway :&nbsp; </td>
+					<td><!--#gtip--></td>
+                    <td>
+                      <input maxlength="3" size="3" name="gtip1" onKeyUp="checkLength(this,this.value)">.
+                      <input maxlength="3" size="3" name="gtip2" onKeyUp="checkLength(this,this.value)">.
+                      <input maxlength="3" size="3" name="gtip3" onKeyUp="checkLength(this,this.value)">.
+                      <input maxlength="3" size="3" name="gtip4" onKeyUp="checkLength(this,this.value)">                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">DHCP Type: </td>
+                    <td><!--#wifidt--></td>
+                    <td>
+                      <select size="1" name="wifidt">
+                        <option value="1">Server</option>
+                        <option value="2">Disable</option>
+                      </select>                    </td>
+                  </tr>
+			  
+                  <tr>
+                    <td></td>
+                    <td align="center">
+                      <input name="Submit" value="Submit" type="button" onClick="buttonDelay();">                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    
+    <div id="footing">
+      <hr><hr>
+      Copyright &copy; 2016 Foxconn Incorporated.  All rights reserved.
+    </div>
+  </body>
+</html>

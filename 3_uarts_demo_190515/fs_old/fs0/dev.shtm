@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<!-- Copyright (c) 2014-2015 Foxconn Incorporated.  All rights reserved. -->
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>Device Management</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    <!--#feedback-->
+    <script src="javascript_dev.js" language="JavaScript1.2" charset="utf-8"></script>
+	<script src="javascript_validate.js" language="JavaScript1.2" charset="utf-8"></script>
+	<script type="text/javascript">
+		function restart()
+		{
+			alert("IP may be changed after this operation.\r\nPlease search the device again!");
+			document.start.action="restart.cgi";	
+			document.start.submit();
+		}
+	</script>
+	<script >
+    	function logout()
+		{
+			document.cookie="username=";
+			window.top.location.href="login.shtm";
+			//document.login.submit();
+		}
+    </script>
+<script>
+		checkCookie();  //excecute checkCookie()
+	</script>
+  </head>
+  <body onLoad="feedback();">
+  
+  <div id="heading">
+      <table width="100%">
+        <tr>
+          <td>
+            <a id="heading_fox" target="_" href="http://www.foxconn.com">
+              <img src="foxconn_logo.jpg" alt="Foxconn">
+            </a>
+          </td>
+          <td width="100%">
+            <div id="heading_h1">
+            ADE-7491 Series UART to Ethernet Sever Device </div>
+            <div id="heading_h2">
+            </div>
+          </td>
+          <td>
+            <a id="heading_fox" target="_" href="http://www.foxconn.com">
+              <img src="logo2.jpg" alt="logo2">
+            </a>
+          </td>
+        </tr>
+      </table>
+	  <div align="right">
+            		Firmware Version:<!--#revision-->
+               	</div>
+      <hr><hr>
+    </div>
+    
+    <div id="menu">
+      <ul>
+		<li><a href="ms.shtm" id="ms" >Wifi Module Settings</a></li>
+		<!--<li><a href="wlanap.shtm" id="wlanap" target="content">WiFi AP Settings</a></li>
+		<li><a href="wlansta.shtm" id="wlansta" target="content">WiFi STA Settings</a></li>-->
+		<li><a href="lan.shtm" id="lan" >Ethernet Settings</a></li>
+		<li><a href="wlan2ur.shtm" id="wlan2ur" >Uart and Network Settings</a></li>
+        <li><a href="s2e.shtm" id="s2e" >Uart Port Status</a></li>
+		<li><a href="dev.shtm" id="dev">Device Management</a></li>
+      </ul>
+      <img src="product.jpg" alt="product">
+    </div>
+  
+  <div id="content">
+    <table width="100%">
+      <tbody>
+	  <tr>
+        	<td>
+            	<div align="right">
+            		<a href="javascript:logout();">
+                    	Logout	
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            	</div>
+             </td>
+        </tr>
+        <tr>
+          <td align="left" valign="top" width="75%">
+            <center>
+              <h2 align="center">Device Management</h2>
+            </center>
+            <hr size="2" width="100%">           
+
+            <h3>User Password Modification</h3>
+            <form action="pw.cgi" method="get" name="pw">
+              <table border="1" cellpadding="2" cellspacing="2" width="100%">
+                <tbody>
+                  <tr>
+                    <td class="gr">Account</td>
+                     <td>
+                      <input name="account" type="text" maxlength="5">
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">Current Password</td>
+                    <td>
+                      <input name="opw" type="text" maxlength="5">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="gr">New Password</td>
+                    <td>
+                      <input name="pw" type="text" maxlength="5">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Confirm New Password </td>
+                    <td>
+                      <input name="cpw" type="text" maxlength="5">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" rowspan="1" align="center">
+                      <input value="Update Setting" type="submit">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+<h3>Module Name Customization </h3>
+            <form action="misc.cgi" method="get">
+              <table border="1" cellpadding="2" cellspacing="2" width="100%">
+                <tbody>
+                  <tr>
+                    <td width="56%" class="gr">New Module Name:</td>
+                    <td>
+                    <input name="modname" type="text" maxlength="16">                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" rowspan="1" align="center">
+                      <input value="Update Setting" type="submit">                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+
+            <h3>Restart Module</h3>
+            <form  name="start">
+              <table border="1" cellpadding="2" cellspacing="2" width="100%">
+                <tbody>
+				  <tr>
+                    <td class="gr">Restart the ADE-7491 Module:</td>
+                    <td colspan="2" rowspan="1" align="center">
+                      <input name="mysubmit" value="Restart" onClick="restart();" type="submit">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+
+            <h3>Restore Factory Defaults</h3>
+            <form method="get" action="defaults.cgi" name="defaultform">
+              <table border="1" cellpadding="2" cellspacing="2" width="100%">
+                <tbody>
+                  <tr>
+                    <td class="gr">Restore all options to their factory default states:</td>
+                    <td colspan="2" rowspan="1" align="center">
+                      <input name="mysubmit" value="Restore Defaults" onClick="return CheckDefaults(document.defaultform);" type="submit">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    
+    <div id="footing">
+      <hr><hr>
+      Copyright &copy; 2015 Foxconn Incorporated.  All rights reserved.
+    </div>
+  </body>
+</html>

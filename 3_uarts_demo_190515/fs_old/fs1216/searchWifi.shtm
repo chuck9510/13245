@@ -1,0 +1,79 @@
+<!-- Copyright 2004, Ralink Technology Corporation All Rights Reserved. -->
+<html>
+<head>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<META http-equiv="Content-Type" content="text/html" charset="gb2312">
+
+<link rel="stylesheet" href="../style/normal_ws.css" type="text/css">
+
+<title>M2M Web Server</title>
+ <script type="text/javascript" src="searchWifi.js"></script>
+<script language="JavaScript" type="text/javascript">
+
+var gg_ssid="";
+var gg_rssi;
+var gg_security;
+var isDelay=0;
+
+function apply_clicked()
+{ 	
+	document.forms[0].action="searchWifi.cgi?ssid="+gg_ssid;
+	
+	document.forms[0].submit();
+}
+	
+function buttonDelay()
+	{
+	if(isDelay==0)
+		{
+			apply_clicked();
+			isDelay=1;
+			setTimeout("resetDelay();",5000);
+		}
+	}
+
+	function resetDelay()
+	{
+		isDelay=0;
+	} 
+</script>
+
+</head>
+
+<body >
+
+<table class="body"><tr><td>
+<form  name="sta_site_survey" >
+<table id="searchWifiTable" width="540" border="1" cellpadding="2" cellspacing="1" bordercolor="#9BABBD">
+  <tr>
+    <td class="title" colspan="8" id="scanSiteSurvey">Site Survey</td>
+	
+  </tr>
+  <tr>
+    <td bgcolor="#e9e9e9" id="scanSelect">&nbsp;</td>
+    <td bgcolor="#e9e9e9" id="scanSSID">SSID</td>
+    <td bgcolor="#e9e9e9" id="RSSI">RSSI</td>
+    <td bgcolor="#e9e9e9" id="Security">Security Mode</td>
+
+  </tr>
+
+  <!--#scan-->
+
+</table>
+  <table width = "540" border = "0" cellpadding = "2" cellspacing = "1">
+    <tr>
+      <td>
+				<input type=button style="{width:100px;}" value="Apply" id="button_apply" name="button_apply"  onClick="buttonDelay()">&nbsp;
+				<!--<input type=button  style="{width:120px;}" value="Refresh" id="button_refresh" onClick="window.location.reload()">
+				<!--<input type=button  style="{width:120px;}" value="searchWifi" id="searchWif" onClick="apply_clicked()">
+				<!--<input type=button  style="{width:120px;}" value="searchWifi" id="button_searchWifi" onClick="searchWifi()">-->
+      </td>
+    </tr>
+  </table>
+
+</form>
+</td></tr>
+</table>
+</body>
+</html>

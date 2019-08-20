@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<!-- Copyright (c) 2014-2015 Foxconn Incorporated. All rights reserved. -->
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>ADE-7491 Uart Configuration &amp; Status</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    <script src="javascript.js" language="JavaScript1.2" charset="utf-8"></script>
+	<script src="javascript_validate.js" language="JavaScript1.2" charset="utf-8"></script>
+	<script >
+    	function logout()
+		{
+			document.cookie="username=";
+			window.top.location.href="login.shtm";
+			//document.login.submit();
+		}
+    </script>
+<script>
+		checkCookie();  //excecute checkCookie()
+	</script>
+  </head>
+  <body>
+    <div id="heading">
+      <table width="100%">
+        <tr>
+          <td width="100%">
+            <div id="heading_h1">
+            IZS-74C1-1A Series UART to Ethernet Sever Device </div>
+            <div id="heading_h2">            </div>          </td>
+        </tr>
+      </table>
+	  <div align="right">
+            		Firmware Version:<!--#revision-->
+   	  </div>
+      <hr><hr>
+    </div>
+  <div id="menu">
+      <ul>
+		<li><a href="ms.shtm" id="ms" >Wifi Module Settings</a></li>
+		<!--<li><a href="wlanap.shtm" id="wlanap" target="content">WiFi AP Settings</a></li>
+		<li><a href="wlansta.shtm" id="wlansta" target="content">WiFi STA Settings</a></li>-->
+		<li><a href="lan.shtm" id="lan" >Ethernet Settings</a></li>
+		<li><a href="wlan2ur.shtm" id="wlan2ur">Uart and Network Settings</a></li>
+        <li><a href="s2e.shtm" id="s2e" >Uart Port Status</a></li>
+		<li><a href="dev.shtm" id="dev">Device Management</a></li>
+      </ul>
+    </div>
+    <div id="content">
+      <table width="100%">
+        <tbody>
+		<tr>
+        	<td>
+            	<div align="right">
+            		<a href="javascript:logout();">
+                    	Logout	
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            	</div>
+             </td>
+        </tr>
+          <tr>
+            <td align="left" valign="top" width="75%">
+              <center> <h2 align="center">Uart Port Status</h2> </center>
+              <hr size="2" width="100%">
+              <table>
+                <tbody>
+                  <tr>
+                    <td class="gr">Name:</td>
+                    <td><b><!--#modname--></b></td>
+                  </tr>
+                  <tr>
+                    <td class="gr" width="25%">IP Address:</td>
+                    <td><!--#ipaddr--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">MAC Address:</td>
+                    <td><!--#macaddr--></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3>Current port settings:</h3>
+              <table width="100%" border="0" cellpadding="2" cellspacing="2">
+                <tbody>
+                  <tr>
+                    <td width="20%" class="gr">Baud Rate: </td>
+                    <td align="center"><!--#p0br--> bits/second</td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Data Size: </td>
+                    <td align="center"><!--#p0bc--> bits/character</td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Parity: </td>
+                    <td align="center"><!--#p0p--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Stop Bits: </td>
+                    <td align="center"><!--#p0sb--> bit(s)</td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Flow Control: </td>
+                    <td align="center"><!--#p0fc--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Local Telnet Port Number: </td>
+                    <td align="center"><!--#p0tlp--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Remote Telnet Port Number: </td>
+                    <td align="center"><!--#p0trp--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Work Mode Selection:</td>
+                    <td align="center"><!--#p0ws--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Telnet Server IP: </td>
+                    <td align="center"><!--#p0tip--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Telnet Timeout: </td>
+                    <td align="center"><!--#p0tt--> seconds</td>
+                  </tr>
+                </tbody>
+              </table>
+			  <h3>Current port settings:</h3>
+              <table width="100%" border="0" cellpadding="2" cellspacing="2">
+                <tbody>
+                  <tr>
+                    <td width="20%" class="gr">Baud Rate: </td>
+                    <td align="center"><!--#p1br--> bits/second</td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Data Size: </td>
+                    <td align="center"><!--#p1bc--> bits/character</td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Parity: </td>
+                    <td align="center"><!--#p1p--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Stop Bits: </td>
+                    <td align="center"><!--#p1sb--> bit(s)</td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Flow Control: </td>
+                    <td align="center"><!--#p1fc--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Local Telnet Port Number: </td>
+                    <td align="center"><!--#p1tlp--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Remote Telnet Port Number: </td>
+                    <td align="center"><!--#p1trp--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Work Mode Selection:</td>
+                    <td align="center"><!--#p1ws--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Telnet Server IP: </td>
+                    <td align="center"><!--#p1tip--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Telnet Timeout: </td>
+                    <td align="center"><!--#p1tt--> seconds</td>
+                  </tr>
+                </tbody>
+              </table>
+			  <h3>Current port settings:</h3>
+              <table width="100%" border="0" cellpadding="2" cellspacing="2">
+                <tbody>
+                  <tr>
+                    <td width="20%" class="gr">Baud Rate: </td>
+                    <td align="center"><!--#p2br--> bits/second</td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Data Size: </td>
+                    <td align="center"><!--#p2bc--> bits/character</td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Parity: </td>
+                    <td align="center"><!--#p2p--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Stop Bits: </td>
+                    <td align="center"><!--#p2sb--> bit(s)</td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Flow Control: </td>
+                    <td align="center"><!--#p2fc--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Local Telnet Port Number: </td>
+                    <td align="center"><!--#p2tlp--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Remote Telnet Port Number: </td>
+                    <td align="center"><!--#p2trp--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Work Mode Selection:</td>
+                    <td align="center"><!--#p2ws--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Telnet Server IP: </td>
+                    <td align="center"><!--#p2tip--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Telnet Timeout: </td>
+                    <td align="center"><!--#p2tt--> seconds</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="footing">
+      <hr><hr>
+      Copyright &copy; 2016 Foxconn Incorporated.  All rights reserved.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<!-- Copyright (c) 2014-2015 Foxconn Incorporated.  All rights reserved. -->
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>IP Change Response</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    <script src="javascript.js" language="JavaScript1.2" charset="utf-8"></script>
+	<script src="javascript_validate.js" language="JavaScript1.2" charset="utf-8"></script>
+<script>
+		checkCookie();  //excecute checkCookie()
+	</script>
+  </head>
+  <body>
+  
+  <div id="heading">
+      <table width="100%">
+        <tr>
+          <td>
+            <a id="heading_fox" target="_" href="http://www.foxconn.com">
+              <img src="foxconn_logo.jpg" alt="Foxconn">
+            </a>
+          </td>
+          <td width="100%">
+            <div id="heading_h1">
+            ADE-7491 Series UART to Ethernet Sever Device </div>
+            <div id="heading_h2">
+            </div>
+          </td>
+          <td>
+            <a id="heading_fox" target="_" href="http://www.foxconn.com">
+              <img src="logo2.jpg" alt="logo2">
+            </a>
+          </td>
+        </tr>
+      </table>
+	  <div align="right">
+            		Firmware Version:<!--#revision-->
+               	</div>
+      <hr><hr>
+    </div>
+    
+    <div id="menu">
+      <ul>
+		<li><a href="ms.shtm" id="ms" >Wifi Module Settings</a></li>
+		<!--<li><a href="wlanap.shtm" id="wlanap" target="content">WiFi AP Settings</a></li>
+		<li><a href="wlansta.shtm" id="wlansta" target="content">WiFi STA Settings</a></li>-->
+		<li><a href="lan.shtm" id="lan" >Ethernet Settings</a></li>
+		<li><a href="wlan2ur.shtm" id="wlan2ur" >Uart and Network Settings</a></li>
+        <li><a href="s2e.shtm" id="s2e" >Uart Port Status</a></li>
+		<li><a href="dev.shtm" id="dev">Device Management</a></li>
+      </ul>
+      <img src="product.jpg" alt="product">
+    </div>
+    
+  <div id="content">
+      <table border="0" cellpadding="2" cellspacing="2" width="100%">
+        <tbody>
+          <tr>
+            
+            <td width="80%"><h2 align="center">IP Address is changed,please re-search this device! </h2>
+              <p align="center">&nbsp;</p></td>
+          </tr>
+          <tr>
+            
+            <td width="20%">
+              <table border="0" cellpadding="4" cellspacing="2" width="100%">
+                <tbody>
+                  <tr>
+                    <td width="29%" class="gr">Module Name:</td>
+                    <td width="71%" align="left" valign="top"><!--#modname--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">MAC:</td>
+                    <td><!--#macaddr--></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>&nbsp;</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  
+
+    
+    <div id="footing">
+      <hr><hr>
+      Copyright &copy; 2015 Foxconn Incorporated.  All rights reserved.
+    </div>
+  
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<!-- Copyright (c) 2014-2015 Foxconn Instruments Incorporated.  All rights reserved. -->
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>Quick Configure</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    <!--#p0vars--><!--#p0tvars--><!--#p0ipvar-->
+    <script src="javascript.js" language="JavaScript1.2" charset="utf-8"></script>
+  </head>
+
+  <body onLoad="SetFormDefaults()">
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td align="left" valign="top" width="75%">
+            <center>
+              <h2 align="center">Quick Configure</h2>
+            </center>
+            <hr size="2" width="100%">
+
+
+            <h3>Quick Settings:</h3>
+            <p>The current settings for ADE-7491 may be changed using the
+            form below. To make the new settings apply each time the ADE-7491 module is
+            reset, ensure that "Make these the default settings" is checked before
+            pressing the "Submit" button. If this control is not checked,
+            the changes are applied to the port but the existing
+            defaults are used whenever the module is next reset.
+            <p>
+
+            <form name="config" action="config.cgi" method="get">
+              <input name="port" value="0" type="hidden">
+              <table width="100%" border="0" cellpadding="2" cellspacing="2">
+                <tbody>
+				  <tr>
+                    <td class="tr">1.WiFi Settings: </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">WiFi Mode: </td>
+                    <td><!--#p0wm--></td>
+                    <td>
+                      <select size="1" name="wlanmode">
+                        <option value="1">AP Mode</option>
+                        <option value="2">STA Mode</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Network Name: </td>
+                    <td><!--#p0na--></td>
+                    <td>
+                      <input type="text" name="apssid">
+					</td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Module MAC Address: </td>
+                    <td><!--#p0ma--></td>
+					<td>
+					<input type="text" name="mac">
+					</td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Security Mode: </td>
+                    <td><!--#p0sm--></td>
+                    <td>
+                      <select name="SM">
+                        <option value="1">Disable</option>
+                        <option value="2">WEP-128</option>
+						<option value="3">WPA-PSK</option>
+						<option value="4">WPA2-PSK</option>
+                      </select>
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="tr">2.Ethernet Port Settings: </td>
+                  </tr>
+				   <tr>
+                    <td class="gr">Open the Ethernet 2: </td>
+                    <td><!--#p0op--></td>
+                    <td>
+                      <select size="1" name="ope">
+                        <option value="1">Disable</option>
+                        <option value="2">Enable</option>
+                      </select>
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">Set the Ethernert 2 Work Mode: </td>
+                    <td><!--#p0st--></td>
+                    <td>
+                      <select size="1" name="stm">
+                        <option value="1">LAN Port</option>
+                        <option value="2">WLAN Port</option>
+                      </select>
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="tr">3.Uart Settings: </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">Uart Mode Selection: </td>
+                    <td><!--#p0um--></td>
+                    <td>
+                      <select size="1" name="um">
+                        <option value="1">RS232</option>
+                        <option value="2">RS422</option>
+						<option value="3">RS485</option>
+                      </select>
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">Data Transfor Mode: </td>
+                    <td><!--#p0dtm--></td>
+                    <td>
+                      <select size="1" name="dtm">
+                        <option value="1">Transparent</option>
+                      </select>
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">Baud Rate: </td>
+                    <td><!--#p0br-->bits/second</td>
+                    <td>
+                      <select size="1" name="br">
+					    <option value="256000">256000</option>
+                        <option value="230400">230400</option>
+                        <option value="115200">115200</option>
+                        <option value="57600">57600</option>
+                        <option value="38400">38400</option>
+                        <option value="19200">19200</option>
+                        <option value="14400">14400</option>
+                        <option value="9600">9600</option>
+                        <option value="4800">4800</option>
+                        <option value="2400">2400</option>
+                        <option value="1200">1200</option>
+                        <option value="600">600</option>
+                        <option value="300">300</option>
+                      </select> bits/S<br>
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">Parity: </td>
+                    <td><!--#p0p--></td>
+                    <td>
+                      <select name="parity">
+                        <option value="1">None</option>
+                        <option value="2">Odd</option>
+                        <option value="3">Even</option>
+                        <option value="4">Mark</option>
+                        <option value="5">Space</option>
+                      </select>
+                    </td>
+                  </tr>
+				   <tr>
+                    <td class="gr">Data Size: </td>
+                    <td><!--#p0bc-->bits/character</td>
+                    <td>
+                      <select size="1" name="bc">
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                      </select> bits/character<br>
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">Stop Bits: </td>
+                    <td><!--#p0sb-->bit(s)</td>
+                    <td>
+                      <select size="1" name="stop">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                      </select> bit(s)<br>
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">Flow Control: </td>
+                    <td><!--#p0fc--></td>
+                    <td>
+                      <select size="1" name="flow">
+                        <option value="1">None</option>
+                        <option value="3">Hardware</option>
+						<option value="4">RS485</option>
+                      </select>
+                    </td>
+                  </tr>
+				   <tr>
+                    <td class="gr">Baudrate adaptive(RFC2117): </td>
+                    <td><!--#p0ba--></td>
+                    <td>
+                      <select size="1" name="bada">
+                        <option value="1">Disable</option>
+                        <option value="2">Enable</option>
+                      </select>
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="tr">4.Network Settings: </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">Work Mode Selection: </td>
+                    <td><!--#p0ws--></td>
+                    <td>
+                      <select size="1" name="ws">
+                        <option value="1">TCP Server</option>
+                        <option value="2">TCP Client</option>
+						<option value="3">UDP Server</option>
+						<option value="4">UDP</option>
+                      </select>
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">Port: </td>
+                    <td><!--#p0po--></td>
+                    <td>
+                      <input type="text" name="port">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="gr">Server Address: </td>
+                    <td><!--#p0sa--></td>
+					<td>
+                      <input maxlength="3" size="3" name="sip1">.
+                      <input maxlength="3" size="3" name="sip2">.
+                      <input maxlength="3" size="3" name="sip3">.
+                      <input maxlength="3" size="3" name="sip4">
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr"> MAX TCP Num: </td>
+                    <td><!--#p0mx--></td>
+                    <td>
+                      <select name="mx">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+                      </select>
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">TCP Time Out: </td>
+                    <td><!--#p0to--></td>
+                    <td>
+                      <input type="text" name="to">
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">TCP Connection Password Authentication: </td>
+                    <td><!--#p0au--></td>
+                    <td>
+                      <select size="1" name="au">
+                        <option value="1">Disable</option>
+                        <option value="2">Enable</option>
+                      </select>
+                    </td>
+                  </tr>
+				  <tr>
+                    <td class="tr">5.Device Management: </td>
+                  </tr>
+				  <tr>
+                    <td class="gr">Restart Module:</td>
+					<td><!--#p0rs-->Restart the ADE-7491</td>
+                    <td colspan="2" rowspan="1" align="center">
+                      <input name="mysubmit" value="Restart" onClick="" type="submit">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td align="center">
+                      <input name="Submit" value="Submit" type="submit">
+                    </td>
+                    <td style="text-align: center;">
+                      <div>&nbsp;<input name="default" value="1" type="checkbox"> Make these the default settings.<br></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<!-- Copyright (c) 2014-2015 Foxconn Incorporated.  All rights reserved. -->
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>IP Change Response</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="h.ico"/>
+    <script src="javascript.js" language="JavaScript1.2" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="heading">
+      <table width="100%">
+        <tr>
+          <td>
+            <a id="heading_fox" target="_" href="http://www.foxconn.com">
+              <img src="foxconn_logo.jpg" alt="Foxconn">
+            </a>
+          </td>
+          <td width="100%">
+            <div id="heading_h1">
+              ADE-7491 Series UART to Ethernet Sever Device 
+            </div>
+            <div id="heading_h2">
+            </div>
+          </td>
+          <td>
+            <a id="heading_fox" target="_" href="http://www.foxconn.com">
+              <img src="logo2.jpg" alt="logo2">
+            </a>
+          </td>
+        </tr>
+      </table>
+      <hr><hr>
+    </div>
+    <div id="menu">
+      <ul>
+        <li><a href="qc.shtm" id="qc">Quick Configure</a></li>
+		<li><a href="ms.shtm" id="ms">Wifi Mode Selection</a></li>
+		<li><a href="wlanap.shtm" id="wlanap">WiFi AP Settings</a></li>
+		<li><a href="wlansta.shtm" id="wlansta">WiFi STA Settings</a></li>
+		<li><a href="lan.shtm" id="lan">Ethernet Settings</a></li>
+		<li><a href="wlan2ur.shtm" id="wlan2ur">Uart and Network Settings</a></li>
+        <li><a href="s2e.shtm" id="s2e">Uart Port Status</a></li>
+		<li><a href="dev.shtm" id="dev">Device Management</a></li>
+      </ul>
+      <img src="product.jpg" alt="product">
+    </div>
+    <div id="content">
+      <table border="0" cellpadding="2" cellspacing="2" width="100%">
+        <tbody>
+          <tr>
+            <td style="vertical-align: top; text-align: left; width: 15%;"></td>
+            <td><h2 align="center">IP Address Change</h2></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <table border="0" cellpadding="4" cellspacing="2" width="100%">
+                <tbody>
+                  <tr>
+                    <td class="gr">Name:</td>
+                    <td align="left" valign="top"><!--#modname--></td>
+                  </tr>
+                  <tr>
+                    <td class="gr">MAC Address:</td>
+                    <td><!--#macaddr--></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>
+                The IP Address of this module is about to change, making this
+                configuration page inaccessible at the current address. Please
+                wait a few seconds then load the configuration page at the
+                newly assigned web address.</p><p>The newly assigned address
+                may be determined using the "Finder" utility.
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="footing">
+      <hr><hr>
+      Copyright &copy; 2015 Foxconn Incorporated.  All rights reserved.
+    </div>
+  </body>
+</html>
